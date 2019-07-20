@@ -1,0 +1,310 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+TC:300,400,700|Roboto:300,400,700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+//designer MH https://challenge.thef2e.com/user/1016?schedule=2591#works-2591
+
+//全域變數
+$body-width:100%;
+$container-width: 480px; //網站整體寬度
+$font-family: 'Noto Sans TC', 'Roboto', sans-serif;
+$font-family-en: 'Noto Sans TC', 'Roboto', sans-serif;
+$tabNumber: 3;
+
+//系統色
+$white: #fff;
+$black: #000;
+$gray-50:  #FAFAFA;
+$gray-100: #F5F5F5;
+$gray-200: #EEEEEE;
+$gray-300: #E0E0E0;
+$gray-400: #BDBDBD;
+$gray-500: #9E9E9E;
+$gray-600: #757575;
+$gray-700: #616161;
+$gray-800: #424242;
+$gray-900: #212121;
+
+
+$primary-color: #384249;
+$secondary-color: #AFB3B6;
+$success-color: #00AA4E;
+$link-color: #384249;
+$link-color-hover: #E9473F;
+
+//文字大小與行高
+@import 'fontsize';
+$text-left: left;
+$text-center: center;
+$text-right: right;
+$link-decoration: none;
+
+//距離
+@function spacer($count: 1, $spacerLevel: 5px) {
+    @return $spacerLevel * $count;
+}
+
+//專案變數
+%position-fixed-bottom {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+}
+%position-relative{
+    position: relative;
+} 
+%position-absolute{
+    position: absolute;
+} 
+%event-border {
+    border: 1px solid $gray-300;
+    border-radius: spacer(1);
+}
+%event-style {
+    padding: spacer(2);
+    margin-bottom: spacer(4);
+    height: spacer(4,12px);
+    color: $primary-color;
+}
+
+@mixin transition {
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+}
+
+@mixin overflow {
+    overflow:hidden;
+	overflow-y:auto;
+}
+@mixin margin-auto {margin: 0 auto;}
+
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+@mixin flex-center-left {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+@mixin flex-space-between {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+
+//-------------inner style-------------//
+
+//Basic
+body {
+    @include font(1);
+    font-family: $font-family;
+    color: $primary-color;
+    background: $secondary-color;
+    @include overflow;
+}
+
+h1,.h1 {font-size: $h1-font-size;}
+h2,.h2 {font-size: $h2-font-size;}
+h3,.h3 {font-size: $h3-font-size;}
+h4,.h4 {font-size: $h4-font-size;}
+h5,.h5 {font-size: $h5-font-size;}
+h6,.h6 {font-size: $h6-font-size;}
+
+a {
+    color: $link-color;
+    text-decoration: $link-decoration;
+    @include transition;
+}
+a:hover {
+    color: $link-color-hover;
+}
+#container {
+    width: $container-width;
+    max-width: $container-width;
+    background: $white;
+    @include margin-auto;
+}
+
+
+
+//Header-Tabs
+header {
+    margin-top: spacer(12);
+    > ul {
+        list-style: none;
+        font-family: $font-family-en;
+        font-size: 0;        
+
+        li{
+            width: $body-width / $tabNumber;
+            display: inline-block;
+            text-align: $text-center;
+            @include font(1);
+            background: $gray-200;
+
+            &:hover {
+                background: $white;
+
+                >a {
+                    color: $link-color-hover;
+                }
+            }
+
+            > a {
+                @include flex-center-left;
+                color: $secondary-color;
+                padding: spacer(3) spacer(2);
+
+                &.active {
+                    background: $white;
+                    color: $link-color-hover;
+                }
+
+                i{padding-right: spacer(1);}
+            }
+
+        }
+    }
+}
+
+
+
+//Main Content
+.main {
+    padding: spacer(4);
+    margin-bottom: spacer(20);
+
+    //--標題
+    >.title {
+        @include flex-space-between;
+        margin-bottom: spacer(3);
+
+        a {
+            color: $secondary-color;
+
+            &:hover {
+                color: $success-color;
+            }
+        }
+    }
+
+    //--新增事件
+    >.addList {
+        @extend %event-style;
+        @extend %event-border;
+        @extend %position-relative;
+
+        &:hover, &:active, &:focus {
+            border-color: $success-color;
+        }
+
+        input {
+            @extend %position-absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            color: $primary-color;
+            border: none;
+            border-radius: spacer(1);
+            padding-left: spacer(8);
+            z-index: 0;
+
+            &:focus {
+                outline: none;
+                -webkit-box-shadow: none;
+                -moz-box-shadow: none;
+                box-shadow: none;
+            }
+        }
+        
+        button {
+            width: spacer(2,12px);
+            height: spacer(2,12px);
+            color: $secondary-color;
+            background: transparent;
+            border: none;
+            @extend %position-absolute;
+            left: spacer(2);
+            top: spacer(1,12px);
+            z-index: 2;
+
+            &:focus {
+                outline: none;
+                -webkit-box-shadow: none;
+                -moz-box-shadow: none;
+                box-shadow: none;
+            }
+        }
+    }
+
+    //--事件列表
+    >.listTo {
+        list-style: none;
+
+        li {
+            @extend %event-style;
+            @extend %event-border;
+            @extend %position-relative;
+            @include flex-center-left;
+
+            >a.btn-done {
+                width: 22px;
+                height: 22px;
+                border-radius: 50%;
+                border: 2px solid #000;
+                position: relative;
+                display: inline-block;
+                
+                &.checked {
+                    background: $secondary-color url(../images/round-done-white.svg) no-repeat center;
+                    border-color: $secondary-color;
+                    opacity: 1;
+                }
+            }
+
+            // .btn-cancel{display: none;font-size: 26px;}
+
+            span {
+                padding-left: spacer(2);
+
+                &.line-through{
+                    text-decoration: line-through;
+                    opacity: 0.6;
+                }
+            }
+        }
+    }
+
+
+
+}
+
+
+//footer 
+footer {
+    width: $body-width;
+    text-align: $text-center;
+    background: $primary-color;
+    color: $white;
+    padding: spacer(1) ;
+    @extend %position-fixed-bottom;
+
+    a {
+        color: $gray-300;
+        padding: 0 spacer(1);
+    }
+}
+
+
+.checked{}

@@ -5,17 +5,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta property="og:title" content="2019 The F2E Challenge - 001.番茄鐘">
+    <meta property="og:description" content="描述">
+    <meta property="og:image" content="<?=ROOT_PATH?>/images/logo.jpg">
+    <link rel="shortcut icon" type="image/x-icon" href="<?=VIEW_SHOW?>/images/favicon.ico" />
+    <link rel="bookmark" href="<?=VIEW_SHOW?>/images/favicon.ico" />
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
-    <title>2019_F2E-Challenge-001.番茄鐘</title>
+    <title>2019 F2E Challenge-001.番茄鐘</title>
 </head>
 
 <body>
 
+    <div id="container">
+        <header>
+            <ul>
+                <li><a href="#" class="active"><i class="material-icons">list</i>To-Do</a></li>
+                <li><a href="#"><i class="material-icons">equalizer</i>Analytics</a></li>
+                <li><a href="#"><i class="material-icons">settings</i>Setting</a></li>
+            </ul>
+        </header>
+        <div class="main">
+            <div class="title">
+                <h3>任務清單</h3>
+                <a href="#" class="btn-edit">編輯</a>
+            </div>
+            <!-- 新增事件 -->
+            <div class="addList">
+                <button class="btn-addNew" type="button">
+                    <i class="material-icons">add_circle</i>
+                </button>
+                <input type="text" class="event" placeholder="輸入待辦事項...">
+            </div>
+            <!-- 事件列表 -->
+            <ul class="listTo"></ul>
+        </div>
+    </div>
+
+
+
     <footer>
-        <p>The 2019 F2E Challenge.Week1 番茄鐘</p>
-        <p>Designed by MH & Maintained by Mio</p>
+        <p>2019 The F2E Challenge.Week1 番茄鐘</p>
+        <p>Designed by <a href="https://challenge.thef2e.com/user/1016?schedule=2591#works-2591" target="_blank">MH</a>
+            & Maintained by <a href="https://medium.com/coding-girl-life" target="_blank">Mio</a></p>
     </footer>
 
+    <script src="js/jquery-3.4.1.min.js"></script>
     <script src="js/all.js"></script>
 </body>
 
