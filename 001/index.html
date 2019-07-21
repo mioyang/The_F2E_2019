@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta property="og:title" content="2019 The F2E Challenge - 001.番茄鐘">
-    <meta property="og:description" content="描述">
-    <meta property="og:image" content="<?=ROOT_PATH?>/images/logo.jpg">
+    <meta property="og:description" content="一週挑戰一個修練主題，總計九週，">
+    <meta property="og:image" content="images/simg.jpg">
     <link rel="shortcut icon" type="image/x-icon" href="<?=VIEW_SHOW?>/images/favicon.ico" />
     <link rel="bookmark" href="<?=VIEW_SHOW?>/images/favicon.ico" />
     <!-- Material Icons -->
@@ -20,28 +20,127 @@
 <body>
 
     <div id="container">
-        <header>
+        <header class="tab-list">
             <ul>
-                <li><a href="#" class="active"><i class="material-icons">list</i>To-Do</a></li>
-                <li><a href="#"><i class="material-icons">equalizer</i>Analytics</a></li>
-                <li><a href="#"><i class="material-icons">settings</i>Setting</a></li>
+                <li data-tab="1" class="active"><i class="material-icons">list</i>To-Do</li>
+                <li data-tab="2"><i class="material-icons">equalizer</i>Analytics</li>
+                <li data-tab="3"><i class="material-icons">settings</i>Setting</li>
             </ul>
         </header>
-        <div class="main">
-            <div class="title">
-                <h3>任務清單</h3>
-                <a href="#" class="btn-edit">編輯</a>
+        <div id="wrap" class="tab-body">
+            <div id="main_1" class="tab-body-content active" data-tabcontent="1">
+                <!-- 標題 -->
+                <div class="title">
+                    <h3>任務清單</h3>
+                    <a href="#" class="btn-edit">編輯</a>
+                </div>
+                <!-- 新增事件 -->
+                <div class="addList">
+                    <button class="btn-addNew" type="button">
+                        <i class="material-icons">add_circle</i>
+                    </button>
+                    <input type="text" class="event" placeholder="輸入待辦事項...">
+                </div>
+                <!-- 事件列表 -->
+                <ul class="listTo"></ul>
             </div>
-            <!-- 新增事件 -->
-            <div class="addList">
-                <button class="btn-addNew" type="button">
-                    <i class="material-icons">add_circle</i>
-                </button>
-                <input type="text" class="event" placeholder="輸入待辦事項...">
+
+            <div id="main_2" class="tab-body-content" data-tabcontent="2">
+                <!-- 標題 -->
+                <div class="title">
+                    <h3>專注時間</h3>
+                </div>
             </div>
-            <!-- 事件列表 -->
-            <ul class="listTo"></ul>
+
+            <div id="main_3" class="tab-body-content" data-tabcontent="3">
+                <!-- 標題 -->
+                <div class="title">
+                    <h3>鈴聲</h3>
+                </div>
+                <!-- 工作鈴聲 -->
+                <div class="ringwrap">
+                    <div class="subtitle">
+                        <h3>Work</h3>
+                    </div>
+                    <form action="">
+                        <div class="ring-radio">
+                            <input type="radio" id="workring1" name="workRadio" class="ring-input">
+                            <label class="ring-label" for="workring1">None</label>
+                        </div>
+                        <div class="ring-radio">
+                            <input type="radio" id="workring2" name="workRadio" class="ring-input">
+                            <label class="ring-label" for="workring2">Beep</label>
+                        </div>
+                        <div class="ring-radio">
+                            <input type="radio" id="workring3" name="workRadio" class="ring-input" checked>
+                            <label class="ring-label" for="workring3">Alarm</label>
+                        </div>
+                        <div class="ring-radio">
+                            <input type="radio" id="workring4" name="workRadio" class="ring-input">
+                            <label class="ring-label" for="workring4">Bell</label>
+                        </div>
+                        <div class="ring-radio">
+                            <input type="radio" id="workring5" name="workRadio" class="ring-input">
+                            <label class="ring-label" for="workring5">Alert</label>
+                        </div>
+                        <div class="ring-radio">
+                            <input type="radio" id="workring6" name="workRadio" class="ring-input">
+                            <label class="ring-label" for="workring6">Music</label>
+                        </div>
+                        <div class="ring-radio">
+                            <input type="radio" id="workring7" name="workRadio" class="ring-input">
+                            <label class="ring-label" for="workring7">Bird</label>
+                        </div>
+                        <div class="ring-radio">
+                            <input type="radio" id="workring8" name="workRadio" class="ring-input">
+                            <label class="ring-label" for="workring8">Ring</label>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- 休息 -->
+                <div class="ringwrap">
+                    <div class="subtitle">
+                        <h3>Break</h3>
+                    </div>
+                    <form action="">
+                        <div class="ring-radio">
+                            <input type="radio" id="break1" name="workRadio" class="ring-input">
+                            <label class="ring-label" for="break1">None</label>
+                        </div>
+                        <div class="ring-radio">
+                            <input type="radio" id="break2" name="workRadio" class="ring-input">
+                            <label class="ring-label" for="break2">Beep</label>
+                        </div>
+                        <div class="ring-radio">
+                            <input type="radio" id="break3" name="workRadio" class="ring-input">
+                            <label class="ring-label" for="break3">Alarm</label>
+                        </div>
+                        <div class="ring-radio">
+                            <input type="radio" id="break4" name="workRadio" class="ring-input">
+                            <label class="ring-label" for="break4">Bell</label>
+                        </div>
+                        <div class="ring-radio">
+                            <input type="radio" id="break5" name="workRadio" class="ring-input">
+                            <label class="ring-label" for="break5">Alert</label>
+                        </div>
+                        <div class="ring-radio">
+                            <input type="radio" id="break6" name="workRadio" class="ring-input" checked>
+                            <label class="ring-label" for="break6">Music</label>
+                        </div>
+                        <div class="ring-radio">
+                            <input type="radio" id="break7" name="workRadio" class="ring-input">
+                            <label class="ring-label" for="break7">Bird</label>
+                        </div>
+                        <div class="ring-radio">
+                            <input type="radio" id="break8" name="workRadio" class="ring-input">
+                            <label class="ring-label" for="break8">Ring</label>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
+
     </div>
 
 

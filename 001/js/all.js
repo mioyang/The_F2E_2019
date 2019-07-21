@@ -7,7 +7,7 @@ var data = JSON.parse(localStorage.getItem('listData')) || [];   //將事件從�
 //-- 綁定監聽事件
 sendData.addEventListener('click', addlistTo);   //點擊新增按鈕的事件監聽
 listTo.addEventListener('click', listCancel);    //點擊刪除按鈕的事件監聽
-listTo.addEventListener('click', listDone);     //點擊完成按鈕的事件監聽
+// listTo.addEventListener('click', listDone);     //點擊完成按鈕的事件監聽
 updateList(data);   //更新事件
 
 
@@ -37,9 +37,10 @@ function updateList(items) {
 
     for (var i = 0; len > i; i++) {
         str += '<li>';
-        str += '<a class="btn-done"></a>';
+        // str += '<input type="checkbox" id="checkStatus" >';
         str += '<i class="material-icons btn-cancel" data-listnum=' + i + '>cancel</i>';
-        str += '<span>' + items[i].content + '</span>';
+        str += '<span class="listTxt">' + items[i].content + '</span>';
+        str += '<i class="material-icons btn-start">play_circle_filled</i>';
         str += '</li>';
     }
     listTo.innerHTML = str;
@@ -61,37 +62,24 @@ function listCancel(e) {
 };
 
 
-//-- 點下完成按鈕事件
-function listDone(e) {
-    e.preventDefault();  //避免原本的動作執行
-    console.log(e.target.nodeName);  //確認點到的元素
-    if (e.target.nodeName !== 'A') { return };  //若沒有點到 完成按鈕 的話，則中斷function
-
-    // var listdone = document.querySelector('.btn-done');  //定義選到的待辦事項
+//--點下完成按鈕事件----待完成
+// function listDone(e) {
+//     e.preventDefault();  //避免原本的動作執行
+//     console.log(e.target.nodeName);  //確認點到的元素
+//     if (e.target.nodeName !== 'INPUT') { return };  //若沒有點到 完成按鈕 的話，則中斷function
 
 
-    //更新網頁內容
-    localStorage.setItem('listData', JSON.stringify(data));
-    updateList(data);
-}
+// }
 
 
 
-function checkStatus(event) {
-    //將目前頁面中的所有 <label> 元素選出來
-    let allLable = document.querySelectorAll('label');
-    //將前一步中的 Nodelist 轉為陣列
-    labelArray = Array.from(allLable);
-    //取得觸發事件元素的 index
-    let getIndex = labelArray.indexOf(event.target);
-    //將資料庫中的陣列資料叫出來
-    let arrayJason = JSON.parse(localStorage.getItem('item'));
-    //當 click 事件觸發時，將 done 的屬性布林值改為相反
-    arrayJason[getIndex]['done'] = !arrayJason[getIndex]['done'];
-    //將新的資料陣列轉成 JSON string 結構
-    stringJson = JSON.stringify(arrayJason);
-    //將新的 JSON string 丟到資料庫中
-    localStorage.setItem(`item`, stringJson);
-    //重新將資料呈現在頁面上
-    createlist();
-};
+//--頁籤切換
+$('.tab-list ul li').on('click', function () {
+    $('.tab-list ul li').removeClass('active');
+    $(this).addClass('active');
+
+    $('.tab-body .tab-body-content').hide();
+    var tab = $(this).data('tab');
+    $('.tab-body .tab-body-content[data-tabcontent=' + tab + ']').show();
+});
+

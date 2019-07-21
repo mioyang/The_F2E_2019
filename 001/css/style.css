@@ -12,20 +12,20 @@ footer {
   bottom: 0;
 }
 
-.main > .addList, .main > .listTo li {
+#main_1 > .addList, #main_1 > .listTo li {
   position: relative;
 }
 
-.main > .addList input, .main > .addList button {
+#main_1 > .addList input, #main_1 > .addList button {
   position: absolute;
 }
 
-.main > .addList, .main > .listTo li {
+#main_1 > .addList, #main_1 > .listTo li {
   border: 1px solid #E0E0E0;
   border-radius: 5px;
 }
 
-.main > .addList, .main > .listTo li {
+#main_1 > .addList, #main_1 > .listTo li {
   padding: 10px;
   margin-bottom: 20px;
   height: 48px;
@@ -92,6 +92,9 @@ header > ul {
   list-style: none;
   font-family: "Noto Sans TC", "Roboto", sans-serif;
   font-size: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 header > ul li {
@@ -101,17 +104,6 @@ header > ul li {
   font-size: 16px;
   line-height: 20px;
   background: #EEEEEE;
-}
-
-header > ul li:hover {
-  background: #fff;
-}
-
-header > ul li:hover > a {
-  color: #E9473F;
-}
-
-header > ul li > a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -125,21 +117,27 @@ header > ul li > a {
   padding: 15px 10px;
 }
 
-header > ul li > a.active {
+header > ul li i {
+  padding-right: 5px;
+}
+
+header > ul li:hover {
+  background: #fff;
+  color: #E9473F;
+  cursor: pointer;
+}
+
+header > ul li.active {
   background: #fff;
   color: #E9473F;
 }
 
-header > ul li > a i {
-  padding-right: 5px;
-}
-
-.main {
+#wrap {
   padding: 20px;
   margin-bottom: 100px;
 }
 
-.main > .title {
+#wrap .title {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -152,19 +150,27 @@ header > ul li > a i {
   margin-bottom: 15px;
 }
 
-.main > .title a {
+#wrap .title a {
   color: #AFB3B6;
 }
 
-.main > .title a:hover {
+#wrap .title a:hover {
   color: #00AA4E;
 }
 
-.main > .addList:hover, .main > .addList:active, .main > .addList:focus {
+#wrap .tab-body-content {
+  display: none;
+}
+
+#wrap .tab-body-content.active {
+  display: block;
+}
+
+#main_1 > .addList:hover, #main_1 > .addList:active, #main_1 > .addList:focus {
   border-color: #00AA4E;
 }
 
-.main > .addList input {
+#main_1 > .addList input {
   left: 0;
   top: 0;
   width: 100%;
@@ -176,13 +182,13 @@ header > ul li > a i {
   z-index: 0;
 }
 
-.main > .addList input:focus {
+#main_1 > .addList input:focus {
   outline: none;
   -webkit-box-shadow: none;
   box-shadow: none;
 }
 
-.main > .addList button {
+#main_1 > .addList button {
   width: 24px;
   height: 24px;
   color: #AFB3B6;
@@ -193,17 +199,17 @@ header > ul li > a i {
   z-index: 2;
 }
 
-.main > .addList button:focus {
+#main_1 > .addList button:focus {
   outline: none;
   -webkit-box-shadow: none;
   box-shadow: none;
 }
 
-.main > .listTo {
+#main_1 > .listTo {
   list-style: none;
 }
 
-.main > .listTo li {
+#main_1 > .listTo li {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -215,7 +221,7 @@ header > ul li > a i {
           justify-content: flex-start;
 }
 
-.main > .listTo li > a.btn-done {
+#main_1 > .listTo li > #checkStatus {
   width: 22px;
   height: 22px;
   border-radius: 50%;
@@ -224,19 +230,106 @@ header > ul li > a i {
   display: inline-block;
 }
 
-.main > .listTo li > a.btn-done.checked {
+#main_1 > .listTo li > #checkStatus.checked {
   background: #AFB3B6 url(../images/round-done-white.svg) no-repeat center;
   border-color: #AFB3B6;
   opacity: 1;
 }
 
-.main > .listTo li span {
+#main_1 > .listTo li .btn-cancel {
+  color: #E9473F;
+}
+
+#main_1 > .listTo li span {
   padding-left: 10px;
 }
 
-.main > .listTo li span.line-through {
+#main_1 > .listTo li span.line-through {
   text-decoration: line-through;
   opacity: 0.6;
+}
+
+#main_1 > .listTo li .btn-start {
+  color: #00AA4E;
+  margin-left: auto;
+}
+
+#main_3 > .ringwrap {
+  margin-top: 20px;
+}
+
+#main_3 > .ringwrap .subtitle h3 {
+  font-weight: 300;
+}
+
+#main_3 form {
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+#main_3 form > .ring-radio {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  position: relative;
+  width: 100%;
+  -ms-flex: 0 0 50%;
+  -webkit-box-flex: 0;
+          flex: 0 0 50%;
+  max-width: 50%;
+  padding: 10px 0;
+}
+
+#main_3 form > .ring-radio > input[type="radio"] {
+  display: none;
+}
+
+#main_3 form > .ring-radio > input[type="radio"]:checked + label:before {
+  border-color: #E9473F;
+}
+
+#main_3 form > .ring-radio > input[type="radio"]:checked + label:after {
+  opacity: 1;
+}
+
+#main_3 form > .ring-radio .ring-label {
+  position: relative;
+  padding: 5px 10px 5px 30px;
+}
+
+#main_3 form > .ring-radio .ring-label::before {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: 0;
+  background: #fff;
+  border: 2px solid #AFB3B6;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+#main_3 form > .ring-radio .ring-label:after {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #E9473F url(../images/round-done-white.svg) no-repeat center;
+  background-size: 20px;
+  border-color: #E9473F;
+  opacity: 0;
 }
 
 footer {

@@ -84,6 +84,13 @@ $link-decoration: none;
 }
 @mixin margin-auto {margin: 0 auto;}
 
+@mixin flex-row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
 @mixin flex-center {
     display: flex;
     align-items: center;
@@ -100,6 +107,13 @@ $link-decoration: none;
     justify-content: space-between;
 }
 
+@mixin col-6 {
+    position: relative;
+    width: 100%;
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 50%;
+}
 
 
 //-------------inner style-------------//
@@ -143,7 +157,8 @@ header {
     > ul {
         list-style: none;
         font-family: $font-family-en;
-        font-size: 0;        
+        font-size: 0;
+        display: flex;        
 
         li{
             width: $body-width / $tabNumber;
@@ -151,28 +166,21 @@ header {
             text-align: $text-center;
             @include font(1);
             background: $gray-200;
+            @include flex-center-left;
+            color: $secondary-color;
+            padding: spacer(3) spacer(2);
+
+            i{padding-right: spacer(1);}
 
             &:hover {
                 background: $white;
-
-                >a {
-                    color: $link-color-hover;
-                }
+                color: $link-color-hover;
+                cursor: pointer;
             }
-
-            > a {
-                @include flex-center-left;
-                color: $secondary-color;
-                padding: spacer(3) spacer(2);
-
-                &.active {
+            &.active {
                     background: $white;
                     color: $link-color-hover;
                 }
-
-                i{padding-right: spacer(1);}
-            }
-
         }
     }
 }
@@ -180,12 +188,12 @@ header {
 
 
 //Main Content
-.main {
+#wrap {
     padding: spacer(4);
     margin-bottom: spacer(20);
 
     //--標題
-    >.title {
+    .title {
         @include flex-space-between;
         margin-bottom: spacer(3);
 
@@ -197,7 +205,11 @@ header {
             }
         }
     }
-
+    .tab-body-content{display: none;}
+    .tab-body-content.active{display: block;}
+}
+//--事件清單
+#main_1 {
     //--新增事件
     >.addList {
         @extend %event-style;
@@ -258,7 +270,7 @@ header {
             @extend %position-relative;
             @include flex-center-left;
 
-            >a.btn-done {
+            >#checkStatus {
                 width: 22px;
                 height: 22px;
                 border-radius: 50%;
@@ -273,7 +285,9 @@ header {
                 }
             }
 
-            // .btn-cancel{display: none;font-size: 26px;}
+            .btn-cancel{
+                color: $link-color-hover;
+            }
 
             span {
                 padding-left: spacer(2);
@@ -283,11 +297,82 @@ header {
                     opacity: 0.6;
                 }
             }
+
+            .btn-start {
+                color: $success-color;
+                margin-left: auto;
+            }
         }
     }
 
 
 
+}
+
+//--圖表分析
+#main_2 {
+
+}
+
+//--鈴聲選擇
+#main_3 {
+    >.ringwrap {
+        margin-top: spacer(4);
+
+        .subtitle h3{
+            font-weight: 300;
+        }
+    }
+
+    form {
+        @include flex-row;
+
+        >.ring-radio {
+            @include flex-center-left;
+            @include col-6;
+            padding: spacer(2) 0;
+
+            >input[type="radio"] {
+                display:none;
+
+                &:checked + label:before { 
+                    border-color:$link-color-hover;
+                }
+                &:checked + label:after {opacity: 1;}
+            }
+
+            .ring-label {
+                position: relative;
+                padding: spacer(1) spacer(2) spacer(1) spacer(6);
+
+                &::before {
+                    content:'';
+                    position:absolute;
+                    top:5px;
+                    left:0;
+                    background:$white;
+                    border:2px solid $secondary-color;
+                    width:20px;
+                    height:20px;
+                    border-radius: 50%;
+                }
+
+                &:after {
+                    content:'';
+                    position:absolute;
+                    top:5px;
+                    left:0;
+                    width:24px;
+                    height:24px;
+                    border-radius: 50%;
+                    background: $link-color-hover url(../images/round-done-white.svg) no-repeat center;
+                    background-size: 20px;
+                    border-color: $link-color-hover;
+                    opacity: 0;
+                }
+            }
+        }
+    }
 }
 
 
