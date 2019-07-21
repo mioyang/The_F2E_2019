@@ -11,9 +11,10 @@ listTo.addEventListener('click', listCancel);    //點擊刪除按鈕的事件�
 updateList(data);   //更新事件
 
 
+
 //-- 加入待辦事件，並同步更新網頁與 localstorage
 function addlistTo(e) {
-    e.preventDefault();  //避免原本的動作執行
+    // e.preventDefault();  //避免原本的動作執行
 
     var text = document.querySelector('.event').value;  //取得輸入在input的值
     var todo = {
@@ -28,6 +29,7 @@ function addlistTo(e) {
     localStorage.setItem('listData', JSON.stringify(data));  //將待辦事件轉化成 JSON 字串 
     console.log(data);
 };
+
 
 
 //-- 更新網頁內容
@@ -72,6 +74,12 @@ function listCancel(e) {
 // }
 
 
+//-鍵盤事件
+$('.event').keypress(function (event) {
+    if (event.which === 13) {
+        addlistTo();
+    }
+});
 
 //--頁籤切換
 $('.tab-list ul li').on('click', function () {
@@ -83,8 +91,8 @@ $('.tab-list ul li').on('click', function () {
     $('.tab-body .tab-body-content[data-tabcontent=' + tab + ']').show();
 });
 
-//-圖表
 
+//-圖表
 new Chart(document.getElementById("datesChart"), {
     "type": "bar",
     "data": {
@@ -100,3 +108,4 @@ new Chart(document.getElementById("datesChart"), {
     },
     "options": { "scales": { "yAxes": [{ "ticks": { "beginAtZero": true } }] } }
 });
+
