@@ -83,3 +83,20 @@ $('.tab-list ul li').on('click', function () {
     $('.tab-body .tab-body-content[data-tabcontent=' + tab + ']').show();
 });
 
+//-圖表
+
+new Chart(document.getElementById("datesChart"), {
+    "type": "bar",
+    "data": {
+        "labels": ["07.08", "07.09", "07.10", "07.11", "07.12", "07.13", "07.14"],
+        "datasets": [{
+            "label": "My Weekly Pomodoro",
+            "data": [17, 12, 15, 10, 16, 23, 8],
+            "fill": true,
+            "backgroundColor": ["#AFB3B6", "#AFB3B6", "#AFB3B6", "#AFB3B6", "#AFB3B6", "#AFB3B6", "#E9473F"],
+            "borderColor": ["#AFB3B6", "#AFB3B6", "#AFB3B6", "#AFB3B6", "#AFB3B6", "#AFB3B6", "#E9473F"],
+            "borderWidth": 1
+        }]
+    },
+    "options": { "scales": { "yAxes": [{ "ticks": { "beginAtZero": true } }] } }
+});

@@ -254,6 +254,60 @@ header > ul li.active {
   margin-left: auto;
 }
 
+#main_2 > .time-analysis {
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+#main_2 > .time-analysis .subtitle h3 {
+  font-weight: 300;
+}
+
+#main_2 > .time-analysis > .time-item {
+  position: relative;
+  width: 100%;
+  -ms-flex: 0 0 50%;
+  -webkit-box-flex: 0;
+          flex: 0 0 50%;
+  max-width: 50%;
+}
+
+#main_2 > .time-analysis > .time-item .consequent {
+  color: #E9473F;
+  margin-top: 15px;
+  font-size: 52px;
+}
+
+#main_2 > .time-analysis > .time-item .consequent > em {
+  color: #AFB3B6;
+  font-size: 16px;
+  padding-left: 5px;
+  font-style: normal;
+  font-weight: 300;
+}
+
+#main_2 > .chart-analysis .dates {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 20px 0;
+}
+
+#main_2 > .chart-analysis .dates > i {
+  background: #EEEEEE;
+  border-radius: 50%;
+}
+
 #main_3 > .ringwrap {
   margin-top: 20px;
 }

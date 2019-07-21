@@ -311,7 +311,42 @@ header {
 
 //--圖表分析
 #main_2 {
+    >.time-analysis {
+        @include flex-row;
+        margin-top: spacer(4);
 
+        .subtitle h3{
+            font-weight: 300;
+        }
+        >.time-item {
+            @include col-6;
+
+            .consequent{
+                color: $link-color-hover;
+                margin-top: spacer(3);
+                font-size: font(10);
+                
+                >em {
+                    color: $secondary-color;
+                    font-size: font(1);
+                    padding-left: spacer(1);
+                    font-style: normal;
+                    font-weight: 300;
+                }
+            }
+        }
+    }
+    >.chart-analysis {
+        .dates {
+            @include flex-space-between;
+            margin: spacer(4) 0;
+
+            >i {
+                background: $gray-200;
+                border-radius: 50%;
+            }
+        }
+    }
 }
 
 //--鈴聲選擇

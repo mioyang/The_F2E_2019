@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta property="og:title" content="2019 The F2E Challenge - 001.番茄鐘">
-    <meta property="og:description" content="一週挑戰一個修練主題，總計九週，">
+    <meta property="og:description" content="一週挑戰一個修練主題，總計九週。本週挑戰蕃茄鐘，先做好自己的蕃茄鐘，才有足夠的時間挑戰未來九週！">
     <meta property="og:image" content="images/simg.jpg">
     <link rel="shortcut icon" type="image/x-icon" href="<?=VIEW_SHOW?>/images/favicon.ico" />
     <link rel="bookmark" href="<?=VIEW_SHOW?>/images/favicon.ico" />
@@ -49,6 +49,33 @@
                 <!-- 標題 -->
                 <div class="title">
                     <h3>專注時間</h3>
+                </div>
+                <!-- 時間 -->
+                <div class="time-analysis">
+                    <div class="time-item">
+                        <div class="subtitle">
+                            <h3>今天</h3>
+                            <h1 class="consequent">8<em>/Tomato</em></h1>
+                        </div>
+                    </div>
+                    <div class="time-item">
+                        <div class="subtitle">
+                            <h3>本週</h3>
+                            <h1 class="consequent">100<em>/Tomato</em></h1>
+                        </div>
+                    </div>
+                </div>
+                <!-- 圖表 -->
+                <div class="chart-analysis">
+                    <div class="subtitle">
+                        <h3>分析圖</h3>
+                    </div>
+                    <div class="dates">
+                        <i class="material-icons">chevron_left</i>
+                        <p>2019.07.08 - 2019.07.14</p>
+                        <i class="material-icons">chevron_right</i>
+                    </div>
+                    <canvas id="datesChart"></canvas>
                 </div>
             </div>
 
@@ -152,6 +179,7 @@
     </footer>
 
     <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
     <script src="js/all.js"></script>
 </body>
 
