@@ -1,0 +1,4 @@
+*.code-workspace
+original/
+scss/
+dist/

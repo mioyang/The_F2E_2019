@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta property="og:title" content="2019 The F2E Challenge - 002.新接龍">
+    <meta property="og:description" content="一週挑戰一個修練主題，總計九週。本週挑戰以深藍搭金色，烘托出一點點博奕味、時尚既典雅的新接龍！">
+    <meta property="og:image" content="images/simg.jpg">
+    <link rel="shortcut icon" type="image/x-icon" href="<?=VIEW_SHOW?>/images/favicon.ico" />
+    <link rel="bookmark" href="<?=VIEW_SHOW?>/images/favicon.ico" />
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>2019 F2E Challenge-002.新接龍</title>
+</head>
+
+<body id="wrap">
+    <div class="container-fluid">
+        <div class="row clearfix">
+            <div class="col-11">
+                <div id="main">
+                    <div class="title">
+                        <div class="row align-items-end">
+                            <div class="col-12 col-md-6 text-left">
+                                <div class="logo d-flex align-items-end">
+                                    <img src="images/freecell_logo_2x.png" alt="">
+                                    <span class="pl-3">#6384730</span>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 text-right">
+                                <div class="d-flex justify-content-end align-items-end">
+                                    <div class="time mr-3">
+                                        <div class="h3 mb-0">Time: 00:00</div>
+                                    </div>
+                                    <div class="score ml-3">
+                                        <div class="h3 mb-0">Score:00</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-top-item">
+                        <div class="row justify-content-between">
+                            <div class="col text-left mr-4">
+                                <div class="card-temp">
+                                    <div class="row">
+                                        <div class="col-3">
+                                            <div class="card-temp-box"></div>
+                                        </div>
+                                        <div class="col-3">
+                                            <div class="card-temp-box"></div>
+                                        </div>
+                                        <div class="col-3">
+                                            <div class="card-temp-box"></div>
+                                        </div>
+                                        <div class="col-3">
+                                            <div class="card-temp-box"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col text-right ml-4">
+                                <div class="card-target">
+                                    <div class="row">
+                                        <div class="col-3">
+                                            <div class="card-target-box">
+                                                <div class="card-target-inner"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-3">
+                                            <div class="card-target-box">
+                                                <div class="card-target-inner"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-3">
+                                            <div class="card-target-box">
+                                                <div class="card-target-inner"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-3">
+                                            <div class="card-target-box">
+                                                <div class="card-target-inner"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-content mx-3">
+                        <div class="row justify-content-center">
+                            <div class="col">
+                                <div class="card-content-item card-content-item-1">
+                                    <img class="cards" src="images/cards/cc/cc_9.svg" alt="">
+                                    <img class="cards" src="images/cards/tr/tr_4.svg" alt="">
+                                    <img class="cards" src="images/cards/pi/pi_q.svg" alt="">
+                                    <img class="cards" src="images/cards/tr/tr_8.svg" alt="">
+                                    <img class="cards" src="images/cards/tr/tr_10.svg" alt="">
+                                    <img class="cards" src="images/cards/cc/cc_5.svg" alt="">
+                                    <img class="cards" src="images/cards/ca/ca_9.svg" alt="">
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card-content-item card-content-item-2">
+                                    <img src="images/cards/pi/pi_8.svg" alt="" class="cards">
+                                    <img src="images/cards/ca/ca_2.svg" alt="" class="cards">
+                                    <img src="images/cards/tr/tr_3.svg" alt="" class="cards">
+                                    <img src="images/cards/tr/tr_7.svg" alt="" class="cards">
+                                    <img src="images/cards/pi/pi_j.svg" alt="" class="cards">
+                                    <img src="images/cards/cc/cc_8.svg" alt="" class="cards">
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card-content-item card-content-item-3">
+                                    <img src="images/cards/tr/tr_6.svg" alt="" class="cards">
+                                    <img src="images/cards/ca/ca_a.svg" alt="" class="cards">
+                                    <img src="images/cards/tr/tr_2.svg" alt="" class="cards">
+                                    <img src="images/cards/pi/pi_4.svg" alt="" class="cards">
+                                    <img src="images/cards/cc/cc_7.svg" alt="" class="cards">
+                                    <img src="images/cards/cc/cc_4.svg" alt="" class="cards">
+                                    <img src="images/cards/pi/pi_7.svg" alt="" class="cards">
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card-content-item card-content-item-4">
+                                    <img src="images/cards/ca/ca_6.svg" alt="" class="cards">
+                                    <img src="images/cards/tr/tr_k.svg" alt="" class="cards">
+                                    <img src="images/cards/cc/cc_3.svg" alt="" class=" cards">
+                                    <img src="images/cards/pi/pi_k.svg" alt="" class="cards">
+                                    <img src="images/cards/pi/pi_10.svg" alt="" class="cards">
+                                    <img src="images/cards/tr/tr_j.svg" alt="" class="cards">
+                                    <img src="images/cards/cc/cc_j.svg" alt="" class="cards">
+                                </div>
+
+                            </div>
+                            <div class="col">
+                                <div class="card-content-item card-content-item-5">
+                                    <img src="images/cards/pi/pi_5.svg" alt="" class="cards">
+                                    <img src="images/cards/ca/ca_10.svg" alt="" class="cards">
+                                    <img src="images/cards/ca/ca_4.svg" alt="" class="cards">
+                                    <img src="images/cards/tr/tr_9.svg" alt="" class="cards">
+                                    <img src="images/cards/cc/cc_2.svg" alt="" class="cards">
+                                    <img src="images/cards/tr/tr_5.svg" alt="" class="cards">
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card-content-item card-content-item-6">
+                                    <img src="images/cards/pi/pi_2.svg" alt="" class="cards">
+                                    <img src="images/cards/pi/pi_a.svg" alt="" class="cards">
+                                    <img src="images/cards/pi/pi_3.svg" alt="" class="cards">
+                                    <img src="images/cards/cc/cc_6.svg" alt="" class="cards">
+                                    <img src="images/cards/ca/ca_5.svg" alt="" class="cards">
+                                    <img src="images/cards/cc/cc_k.svg" alt="" class="cards">
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card-content-item card-content-item-7">
+                                    <img src="images/cards/cc/cc_10.svg" alt="" class="cards">
+                                    <img src="images/cards/ca/ca_8.svg" alt="" class="cards">
+                                    <img src="images/cards/cc/cc_q.svg" alt="" class="cards">
+                                    <img src="images/cards/tr/tr_a.svg" alt="" class="cards">
+                                    <img src="images/cards/ca/ca_k.svg" alt="" class="cards">
+                                    <img src="images/cards/pi/pi_9.svg" alt="" class="cards">
+                                    <img src="images/cards/tr/tr_q.svg" alt="" class="cards">
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card-content-item card-content-item-8">
+                                    <img src="images/cards/ca/ca_3.svg" alt="" class="cards">
+                                    <img src="images/cards/ca/ca_q.svg" alt="" class="cards">
+                                    <img src="images/cards/ca/ca_7.svg" alt="" class="cards">
+                                    <img src="images/cards/pi/pi_6.svg" alt="" class="cards">
+                                    <img src="images/cards/ca/ca_j.svg" alt="" class="cards">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-1">
+                <ul id="sidenav">
+                    <li><img src="images/undo_2x.png" alt=""></li>
+                    <li><img src="images/hint_2x.png" alt=""></li>
+                    <li><img src="images/NewGame.svg" alt=""></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row">
+            <footer class="text-center col-12">
+                <p>2019 The F2E Challenge.Week2 新接龍</p>
+                <p>Designed by <a href="https://challenge.thef2e.com/user/323?schedule=2967#works-2967"
+                        target="_blank">野鴿</a>
+                    & Maintained by <a href="https://medium.com/coding-girl-life" target="_blank">Mio</a></p>
+            </footer>
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/all.js"></script>
+</body>
+
+</html>
