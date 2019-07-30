@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta property="og:title" content="2019 The F2E Challenge - 003.MP3 Player">
+    <meta property="og:description" content="一週挑戰一個修練主題，總計九週。本週挑戰自己在DailyUI #009的設計圖！">
+    <meta property="og:image" content="images/simg.jpg">
+    <link rel="shortcut icon" type="image/x-icon" href="<?=VIEW_SHOW?>/images/favicon.ico" />
+    <link rel="bookmark" href="<?=VIEW_SHOW?>/images/favicon.ico" />
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>2019 F2E Challenge-003.MP3 Player</title>
+</head>
+
+<body>
+
+    <div class="main mx-auto">
+
+        <div class="audio-head text-center p-3">
+            <h4>溫一壺青春下酒</h4>
+        </div>
+        <div class="audio-cover mb-3 d-flex justify-content-center align-items-center">
+            <div class="sound-wave position-absolute"></div>
+            <figure class="text-center audio-cover-img"><img src="images/cover.webp" alt=""></figure>
+        </div>
+        <div class="audio-lyric text-center">敬咱未來的一切一切</div>
+        <div class="audio-bar px-3 my-2">
+            <div class="audio-progress progress rounded-pill">
+                <div class="progress-now"></div>
+            </div>
+            <div class="audio-time w-100 d-flex justify-content-between">
+                <div class="audio-time-now">00:00</div>
+                <div class="audio-time-all">05:02</div>
+            </div>
+        </div>
+        <div class="audio-btn my-2 px-3 d-flex justify-content-center align-items-center">
+            <div class="mx-2 audio-btn-action audio-btn-action-repeat"><i class="material-icons">repeat</i></div>
+            <div class="mx-2 audio-btn-before"><i class="material-icons">skip_previous</i></div>
+            <div class="mx-2 audio-btn-play audio-btn-play-off"><i class="material-icons">play_circle_filled</i></div>
+            <div class="mx-2 audio-btn-next"><i class="material-icons">skip_next</i></div>
+            <div class="mx-2 audio-btn-volume"><i class="material-icons">volume_up</i></div>
+        </div>
+        <ul class="audio-play-list mx-auto my-2">
+            <li>虧欠</li>
+            <li>溫一壺青春下酒</li>
+            <li>最遙遠的距離 feat. 蔡依玲</li>
+            <li>風吹</li>
+            <li>花帔 feat. 王榆鈞</li>
+            <li>溫柔的暴動</li>
+            <li>生而為人，我很抱歉</li>
+            <li>曾經我也想過一了百了</li>
+            <li>給五十歲自己的備忘錄</li>
+        </ul>
+
+    </div>
+
+
+    <footer class="fixed-bottom text-right w-100 m-3">
+        <p>2019 The F2E Challenge.Week3 MP3 Player / 練習作品，無商業用途</p>
+        <p>Designed by & Maintained by <a href="https://medium.com/coding-girl-life" target="_blank">Mio</a></p>
+    </footer>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/all.js"></script>
+</body>
+
+</html>
