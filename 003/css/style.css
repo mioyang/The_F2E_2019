@@ -9460,6 +9460,7 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 body {
+  height: 100vh;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   color: #000;
   position: relative;
@@ -9468,13 +9469,14 @@ body {
 }
 
 .main {
-  min-height: 100vh;
+  height: 550px;
+  max-height: 100vh;
   background: rgba(0, 67, 122, 0.3);
   padding: 1rem;
   position: relative;
   z-index: 2019;
-  width: 375px;
-  max-width: 375px;
+  width: 480px;
+  max-width: 480px;
   overflow: hidden;
   overflow-y: auto;
 }
@@ -9514,8 +9516,8 @@ body {
 }
 
 .main > .audio-cover > .audio-cover-img {
-  width: 375px;
-  max-width: 375px;
+  width: 480px;
+  max-width: 480px;
   -webkit-animation: img-cover 3.5s linear infinite .8s;
           animation: img-cover 3.5s linear infinite .8s;
 }
@@ -9564,7 +9566,7 @@ body {
 
 .main > .audio-play-list {
   width: calc(100% - 3rem);
-  height: 120px;
+  height: calc(100% - 900px);
   list-style: none;
   color: #E8D4A2;
   overflow: scroll;
