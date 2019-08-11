@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Material Lite CSS -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.blue-amber.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>F2E-Challenge-006.Validation</title>
+
+
+</head>
+
+<body>
+    <div class="mdl-layout mdl-js-layout">
+        <header class="mdl-layout__header mdl-layout__header--transparent mdl-color-text--grey-100">
+            <div class="mdl-layout__header-row">
+                <h2>請根據下列步驟完成付款並下單團購！</h2>
+            </div>
+        </header>
+        <div class="demo-ribbon"></div>
+        <main class="demo-main mdl-layout__content">
+            <div class="demo-container mdl-grid">
+                <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+                <div class="demo-content mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--8-col">
+                    <div class="steps">
+                        <ul class="list-unstyled multi-steps">
+                            <li class="finished">建立帳戶</li>
+                            <li class="finished">基本資訊</li>
+                            <li class="finished">上傳個人照</li>
+                            <li class="active">付款資訊</li>
+                        </ul>
+                    </div>
+
+                    <div class="forms">
+                        <form action="#">
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                <input class="mdl-textfield__input" type="num" placeholder="1234 5678 1234 5678" id="userCardNum" pattern="-?[0-9]*(\.[0-9]+)?"
+                                    maxlength="16">
+                                <label class="mdl-textfield__label" for="userCardNum">信用卡號</label>
+                                <span class="mdl-textfield__error">請輸入有效卡號!</span>
+                            </div>
+                            <div class="mdl-inline-textfield">
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                    <input class="mdl-textfield__input" type="text" placeholder="MMYY" pattern="-?[0-9]*(\.[0-9]+)?" maxlength="4" id="userExpire">
+                                    <label class="mdl-textfield__label" for="userExpire">有效日期</label>
+                                    <span class="mdl-textfield__error">請輸入數字!</span>
+                                </div>
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                    <input class="mdl-textfield__input" type="num" placeholder="777" id="userCCV" pattern="-?[0-9]*(\.[0-9]+)?" maxlength="3">
+                                    <label class="mdl-textfield__label" for="userCCV">卡片背面末3碼</label>
+                                    <span class="mdl-textfield__error">請輸入數字!</span>
+                                </div>
+                            </div>
+                        </form>
+                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--light-blue mdl-color-text--light-blue-50"
+                            onclick="location.href='index.html'">
+                            完成送出
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer class="mdl-mini-footer">
+            <div class="mdl-mini-footer__middle-section">
+                <div class="mdl-logo">Designed and Maintained by Mio.</div>
+            </div>
+        </footer>
+    </div>
+
+
+
+
+
+    <!-- Material Lite JS -->
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <script src="js/all.js"></script>
+
+</body>
+
+</html>
