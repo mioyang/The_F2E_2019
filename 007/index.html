@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta property="og:title" content="2019 The F2E Challenge - 007.匿名聊天室">
+    <meta property="og:description" content="一週挑戰一個修練主題，總計九週。本週挑戰以傾聽彼此的即時聊天室，用紙杯傳話筒做主題，像是在和誰講悄悄話，線的另一端會是誰在聽我說話呢?">
+    <meta property="og:image" content="images/vlogo.jpg">
+
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/sweetalert.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>2019 F2E Challenge-007.匿名聊天室</title>
+</head>
+
+<body class="d-flex flex-column justify-content-center align-items-center">
+
+    <div id="main">
+        <div class="logo m-3 text-center"><img src="images/logo.png" alt=""></div>
+        <div class="form-group my-3">
+            <input type="text" class="form-control rounded-0 mx-auto text-center" id="username" placeholder="請輸入暱稱"
+                maxlength="25">
+        </div>
+        <div class="d-flex justify-content-between align-items-center mt-5 px-5">
+            <div id="btn1" class="btn-enter p-3 text-center">
+                <img src="images/ic_1v1.png" alt="">
+                <div class="h3">雙人聊天室</div>
+            </div>
+            <div id="btn2" class="btn-enter p-3 text-center">
+                <img src="images/ic_ multiplayer.png" alt="">
+                <div class="h3">多人聊天室</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="chat">
+        <div class="nav justify-content-center align-items-center position-relative">
+            <div id="btn-back" class="position-absolute"><img src="images/Arrow_Simple_left.svg" alt=""></div>
+            <div class="h3 m-0">聊天大廳</div>
+        </div>
+        <div class="msg col-12"></div>
+        <div id="message-box" class="d-flex flex-row align-items-center p-2">
+            <div class="btn-add mx-2"><img src="images/Add.svg" alt=""></div>
+            <div class="btn-emoji mx-2"><img src="images/Smile.svg" alt=""></div>
+            <input type="text" class="form-control mx-2 px-3" id="message-txt" placeholder="請輸入文字">
+            <div class="btn-send mx-2"><img src="images//Send.svg" alt=""></div>
+        </div>
+    </div>
+
+
+    <footer class="fixed-bottom text-right w-100 m-3">
+        <p>2019 The F2E Challenge.Week7 匿名聊天室</p>
+        <p>Designed by <a href="https://challenge.thef2e.com/user/316?schedule=4072#works-4072" target="_blank">EG</a>
+            & Maintained by <a href="https://medium.com/coding-girl-life" target="_blank">Mio</a></p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="js/sweetalert.min.js"></script>
+    <script src="js/all.js"></script>
+    <script type="text/javascript">
+        swal.setDefaults({
+            confirmButtonText: "好窩",
+            cancelButtonText: "鼻要"
+        });
+    </script>
+</body>
+
+</html>

@@ -27,7 +27,7 @@ function addlistTo(e) {
 
     updateList(data);  //更新網頁內容
     localStorage.setItem('listData', JSON.stringify(data));  //將待辦事件轉化成 JSON 字串 
-    console.log(data);
+    // console.log(data);
 };
 
 
@@ -39,10 +39,12 @@ function updateList(items) {
 
     for (var i = 0; len > i; i++) {
         str += '<li>';
-        // str += '<input type="checkbox" id="checkStatus" >';
-        str += '<i class="material-icons btn-cancel" data-listnum=' + i + '>cancel</i>';
-        str += '<span class="listTxt">' + items[i].content + '</span>';
-        str += '<i class="material-icons btn-start">play_circle_filled</i>';
+        // str += '<i class="material-icons btn-cancel" data-listnum=' + i + '>cancel</i>';
+        str += '<div class="event-radio" data-listindex=' + i + '>';
+        str += '<input type="radio" id="event' + i + '" name="eventRadio" class="event-input">';
+        str += '<label class="event-label" for="event' + i + '">' + items[i].content + '</label>'
+        str += '</div>';
+        str += '<a href="#" class="btn-start"><i class="material-icons">play_circle_filled</i></a>';
         str += '</li>';
     }
     listTo.innerHTML = str;
@@ -69,9 +71,9 @@ function listCancel(e) {
 //     e.preventDefault();  //避免原本的動作執行
 //     console.log(e.target.nodeName);  //確認點到的元素
 //     if (e.target.nodeName !== 'INPUT') { return };  //若沒有點到 完成按鈕 的話，則中斷function
-
-
 // }
+
+
 
 
 //-鍵盤事件

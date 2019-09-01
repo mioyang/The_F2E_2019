@@ -262,52 +262,74 @@ header {
 
     //--事件列表
     >.listTo {
-        list-style: none;
+            list-style: none;
 
-        li {
+        li{
             @extend %event-style;
             @extend %event-border;
             @extend %position-relative;
             @include flex-center-left;
 
-            >#checkStatus {
-                width: 22px;
-                height: 22px;
-                border-radius: 50%;
-                border: 2px solid #000;
-                position: relative;
-                display: inline-block;
+            >.event-radio{
+                @include flex-center-left;
+                @include col-6;
                 
-                &.checked {
-                    background: $secondary-color url(../images/round-done-white.svg) no-repeat center;
-                    border-color: $secondary-color;
-                    opacity: 1;
+                >input[type="radio"] {
+                    display: none;
+
+                    &:checked+label:before {
+                        border-color: $link-color-hover;
+                    }
+
+                    &:checked+label:after {
+                        opacity: 1;
+                    }
                 }
-            }
 
-            .btn-cancel{
-                color: $link-color-hover;
-            }
+                >.event-label {
+                    position: relative;
+                    padding-left: spacer(6);
 
-            span {
-                padding-left: spacer(2);
+                    &::before {
+                        content:'';
+                        position:absolute;
+                        top:0;
+                        left:0;
+                        background:$white;
+                        border:2px solid $secondary-color;
+                        width:20px;
+                        height:20px;
+                        border-radius: 50%;
+                    }
 
-                &.line-through{
-                    text-decoration: line-through;
-                    opacity: 0.6;
+                    &:after {
+                        content:'';
+                        position:absolute;
+                        top:5px;
+                        left:0;
+                        width:24px;
+                        height:24px;
+                        border-radius: 50%;
+                        background: $link-color-hover url(../images/round-done-white.svg) no-repeat center;
+                        background-size: 20px;
+                        border-color: $link-color-hover;
+                        opacity: 0;
+                    }
                 }
-            }
-
-            .btn-start {
-                color: $success-color;
-                margin-left: auto;
             }
         }
+
+        .btn-cancel {
+            color: $link-color-hover;
+        }
+
+        .btn-start {
+            color: $success-color;
+            margin-left: auto;
+        }
     }
-
-
-
 }
+
 
 //--圖表分析
 #main_2 {
@@ -425,6 +447,3 @@ footer {
         padding: 0 spacer(1);
     }
 }
-
-
-.checked{}

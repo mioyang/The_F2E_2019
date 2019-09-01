@@ -221,35 +221,72 @@ header > ul li.active {
           justify-content: flex-start;
 }
 
-#main_1 > .listTo li > #checkStatus {
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
-  border: 2px solid #000;
+#main_1 > .listTo li > .event-radio {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   position: relative;
-  display: inline-block;
+  width: 100%;
+  -ms-flex: 0 0 50%;
+  -webkit-box-flex: 0;
+          flex: 0 0 50%;
+  max-width: 50%;
 }
 
-#main_1 > .listTo li > #checkStatus.checked {
-  background: #AFB3B6 url(../images/round-done-white.svg) no-repeat center;
-  border-color: #AFB3B6;
+#main_1 > .listTo li > .event-radio > input[type="radio"] {
+  display: none;
+}
+
+#main_1 > .listTo li > .event-radio > input[type="radio"]:checked + label:before {
+  border-color: #E9473F;
+}
+
+#main_1 > .listTo li > .event-radio > input[type="radio"]:checked + label:after {
   opacity: 1;
 }
 
-#main_1 > .listTo li .btn-cancel {
+#main_1 > .listTo li > .event-radio > .event-label {
+  position: relative;
+  padding-left: 30px;
+}
+
+#main_1 > .listTo li > .event-radio > .event-label::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #fff;
+  border: 2px solid #AFB3B6;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+#main_1 > .listTo li > .event-radio > .event-label:after {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #E9473F url(../images/round-done-white.svg) no-repeat center;
+  background-size: 20px;
+  border-color: #E9473F;
+  opacity: 0;
+}
+
+#main_1 > .listTo .btn-cancel {
   color: #E9473F;
 }
 
-#main_1 > .listTo li span {
-  padding-left: 10px;
-}
-
-#main_1 > .listTo li span.line-through {
-  text-decoration: line-through;
-  opacity: 0.6;
-}
-
-#main_1 > .listTo li .btn-start {
+#main_1 > .listTo .btn-start {
   color: #00AA4E;
   margin-left: auto;
 }
