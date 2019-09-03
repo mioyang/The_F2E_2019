@@ -9605,8 +9605,7 @@ footer a:hover {
 
 #chat > .msg {
   margin-top: 0.5rem;
-  margin-bottom: 60px;
-  max-height: 560px;
+  max-height: calc(100vh - 120px);
   overflow: scroll;
   overflow-x: hidden;
 }
@@ -9786,6 +9785,16 @@ Media Screen Style
   }
   #main .btn-enter .h3 {
     font-size: 1rem;
+  }
+  #chat {
+    width: 100vw;
+    padding: 0;
+    margin: 0;
+  }
+  #chat > #message-box {
+    width: 100vw;
+    padding: 0;
+    margin: 0;
   }
 }
 
