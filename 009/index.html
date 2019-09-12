@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta property="og:title" content="2019 The F2E Challenge - 009.筆記軟體">
+    <meta property="og:description" content="一週挑戰一個修練主題，總計九週。本週挑戰參考了 HackMD 以及 Codepen，透過分類、時間來過濾筆記，並且有日間/夜間模式做切換！">
+    <meta property="og:image" content="images/simg.jpg">
+
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <title>2019 F2E Challenge-009.筆記軟體</title>
+</head>
+
+<body class="d-flex flex-column justify-content-center align-items-center">
+
+    <div class="container-fluid h-100">
+        <div class="row h-100">
+            <div class="col-12 col-lg-3 p-0">
+                <div id="sidebar" class="p-3 flex-column text-center justify-content-center h-100">
+                    <div class="col-12 logo p-4 mb-5">MARKDOWN</div>
+                    <nav class="nav flex-column sticky-top py-3">
+                        <a class="w-75 mx-auto my-2 nav-link active" href="#">建立筆記</a>
+                        <a class="w-75 mx-auto my-2 nav-link" href="#">所有筆記</a>
+                        <a class="w-75 mx-auto my-2 nav-link" href="#">已加星號</a>
+                        <a class="w-75 mx-auto my-2 nav-link" href="#">垃圾桶</a>
+                    </nav>
+                    <ul class="mode d-flex justify-content-center">
+                        <li class="day mx-2 d-flex justify-content-center align-items-center active">
+                            <img src="img/icon_1.svg" alt="" srcset="">
+                        </li>
+                        <li class="night mx-2 d-flex justify-content-center align-items-center">
+                            <img src="img/icon_2.svg" alt="" srcset="">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-12 col-lg-9 p-0">
+                <div id="main" class="h-100">
+                    <div class="row">
+                        <div class="col-12 col-lg-4">
+                            <div class="form-group">
+                                <select id="orderBy" class="custom-select">
+                                    <option selected>UI設計</option>
+                                    <option value="1">網頁設計</option>
+                                    <option value="2">靈感來來</option>
+                                    <option value="3">大神推薦</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-4">
+                            <div class="form-group">
+                                <select id="sort" class="custom-select">
+                                    <option selected>依照時間(由新到舊)</option>
+                                    <option value="1">依照時間(由舊到新)</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-4 text-right">
+                            <div id="view" class="d-flex align-items-center justify-content-end">
+                                <a href="#"
+                                    class="btn-view mx-2 d-flex align-items-center justify-content-center active">
+                                    <i class="material-icons">
+                                        view_module
+                                    </i>
+                                </a>
+                                <a href="#" class="btn-view mx-2 d-flex align-items-center justify-content-center">
+                                    <i class="material-icons">
+                                        view_list
+                                    </i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <div class="card border-0 my-3">
+                                <div class="card-body text-center">
+                                    <img src="img/img_9.png" class="card-img-top mb-3" alt="THE F2E Week9 心得">
+                                    <h5 class="card-title">
+                                        <i class="material-icons active">
+                                            grade
+                                        </i>
+                                        THE F2E Week9 心得</h5>
+                                    <p class="card-text">2019/09/08 <span class="badge badge-primary ml-3">UI設計</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <div class="card border-0 my-3">
+                                <div class="card-body text-center">
+                                    <img src="img/img_8.png" class="card-img-top mb-3" alt="THE F2E Week8 心得">
+                                    <h5 class="card-title">
+                                        <i class="material-icons">
+                                            grade
+                                        </i>
+                                        THE F2E Week8 心得</h5>
+                                    <p class="card-text">2019/09/08 <span class="badge badge-primary ml-3">UI設計</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <div class="card border-0 my-3">
+                                <div class="card-body text-center">
+                                    <img src="img/img_7.png" class="card-img-top mb-3" alt="THE F2E Week7 心得">
+                                    <h5 class="card-title">
+                                        <i class="material-icons">
+                                            grade
+                                        </i>
+                                        THE F2E Week7 心得</h5>
+                                    <p class="card-text">2019/09/08 <span class="badge badge-primary ml-3">UI設計</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <div class="card border-0 my-3">
+                                <div class="card-body text-center">
+                                    <img src="img/img_6.png" class="card-img-top mb-3" alt="THE F2E Week6 心得">
+                                    <h5 class="card-title">
+                                        <i class="material-icons">
+                                            grade
+                                        </i>
+                                        THE F2E Week6 心得</h5>
+                                    <p class="card-text">2019/09/08 <span class="badge badge-primary ml-3">UI設計</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <div class="card border-0 my-3">
+                                <div class="card-body text-center">
+                                    <img src="img/img_5.png" class="card-img-top mb-3" alt="THE F2E Week5 心得">
+                                    <h5 class="card-title">
+                                        <i class="material-icons">
+                                            grade
+                                        </i>
+                                        THE F2E Week5 心得</h5>
+                                    <p class="card-text">2019/09/08 <span class="badge badge-primary ml-3">UI設計</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <div class="card border-0 my-3">
+                                <div class="card-body text-center">
+                                    <img src="img/img_4.png" class="card-img-top mb-3" alt="THE F2E Week4 心得">
+                                    <h5 class="card-title">
+                                        <i class="material-icons">
+                                            grade
+                                        </i>
+                                        THE F2E Week4 心得</h5>
+                                    <p class="card-text">2019/09/08 <span class="badge badge-primary ml-3">UI設計</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <div class="card border-0 my-3">
+                                <div class="card-body text-center">
+                                    <img src="img/img_3.png" class="card-img-top mb-3" alt="THE F2E Week3 心得">
+                                    <h5 class="card-title">
+                                        <i class="material-icons">
+                                            grade
+                                        </i>
+                                        THE F2E Week3 心得</h5>
+                                    <p class="card-text">2019/09/08 <span class="badge badge-primary ml-3">UI設計</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <div class="card border-0 my-3">
+                                <div class="card-body text-center">
+                                    <img src="img/img_2.png" class="card-img-top mb-3" alt="THE F2E Week2 心得">
+                                    <h5 class="card-title">
+                                        <i class="material-icons">
+                                            grade
+                                        </i>
+                                        THE F2E Week2 心得</h5>
+                                    <p class="card-text">2019/09/08 <span class="badge badge-primary ml-3">UI設計</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <div class="card border-0 my-3">
+                                <div class="card-body text-center">
+                                    <img src="img/img_1.png" class="card-img-top mb-3" alt="THE F2E Week1 心得">
+                                    <h5 class="card-title">
+                                        <i class="material-icons">
+                                            grade
+                                        </i>
+                                        THE F2E Week1 心得</h5>
+                                    <p class="card-text">2019/09/08 <span class="badge badge-primary ml-3">UI設計</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- <footer>
+        <p>2019 The F2E Challenge.Week2 新接龍</p>
+        <p>Designed by <a href="https://challenge.thef2e.com/user/323?schedule=2967#works-2967" target="_blank">野鴿</a>
+            & Maintained by <a href="https://medium.com/coding-girl-life" target="_blank">Mio</a></p>
+    </footer> -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="js/all.js"></script>
+</body>
+
+</html>
