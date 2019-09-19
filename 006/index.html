@@ -19,14 +19,14 @@
         <div class="row">
             <div class="col-12">
                 <div id="section-1" :class="flexCenter" :style="sectionMinheight">
-                    <div class="bg"><img src="images/bg_01.png" alt="" srcset=""></div>
-                    <div class="title" :class="'position-absolute'"><span>不 想</span> <span>上 班</span></div>
-                    <div class="logo" :class="'position-absolute'"><img src="images/logo.svg" alt="" srcset=""> I don't
-                        want to work</div>
+                    <div class="bg"><img :src="headerSetion.headerImg.bannerBg" alt="" srcset=""></div>
+                    <div class="title" :class="'position-absolute'" v-html="headerSetion.logoTxt"></div>
+                    <div class="logo" :class="'position-absolute'"><img :src="headerSetion.headerImg.siteLogo" alt=""
+                            srcset="">
+                        {{headerSetion.siteTitle}}</div>
                 </div>
             </div>
         </div>
-
     </div>
 
 
