@@ -1,5 +1,6 @@
 *.code-workspace
+*.txt
 original/
 scss/
 dist/
-maㄋter/
+master/
