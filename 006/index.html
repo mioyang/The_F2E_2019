@@ -19,7 +19,8 @@
         <div class="row">
             <div class="col-12">
                 <div id="section-1" :class="flexCenter" :style="sectionMinheight">
-                    <div class="bg"><img :src="headerSetion.headerImg.bannerBg" alt="" srcset=""></div>
+                    <div class="bg" :class="'showIn'"><img :src="headerSetion.headerImg.bannerBg" alt="" srcset="">
+                    </div>
                     <div class="title" :class="'position-absolute'" v-html="headerSetion.logoTxt"></div>
                     <div class="logo" :class="'position-absolute'"><img :src="headerSetion.headerImg.siteLogo" alt=""
                             srcset="">
@@ -27,9 +28,46 @@
                 </div>
             </div>
         </div>
+        <div class="row">
+            <div class="col-12 section-title">Rooms</div>
+            <div class="col-xs-12 col-md-6 col-xl-4" v-for="item in rooms" :key="item.id">
+                <div class="room-list p-3 my-3" :class="'d-flex'">
+                    <h3 class="room-title">{{item.name}}</h3>
+                    <div class="card rounded-0">
+                        <div class="card-body">
+                            <figure class="room-thumb-img" :style="{ background: 'url('+ item.imageUrl +')' }">
+                                <figcaption></figcaption>
+                            </figure>
+                            <div class=" d-flex room-info">
+                                <div class="col-4">
+                                    <small>人數</small>
+                                    <p>1</p>
+                                </div>
+                                <div class="col-4">
+                                    <small>人數</small>
+                                    <p>1</p>
+                                </div>
+                                <div class="col-4">
+                                    <small>人數</small>
+                                    <p>18</p>
+                                </div>
+                            </div>
+                            <div class="room-amenities">wifi , 早餐 , 電話 , 空調 , 冰箱 , 禁止吸煙 , 可帶寵物</div>
+                            <div class="room-price">
+                                <div><span>假日</span><span class="h-price pr-0">${{item.holidayPrice}}</span></div>
+                                <div><span>平日</span><span class="n-price pr-0">${{item.normalDayPrice}}</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
-
+    <!-- axios -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <!-- ScrollReveal.js -->
+    <script src="https://unpkg.com/scrollreveal"></script>
     <script src="js/vue.js"></script>
     <script src="js/all.js"></script>
 </body>
