@@ -37,10 +37,10 @@ var app = new Vue({
         sectionMinheight: { minHeight: '100vh' },
         siteInfos: {
             siteImgs: {
-                bannerBg: "/static/images/bg_01.png",
-                siteLogo: "/static/images/logo.svg",
-                footerLogo: "/static/images/logo_white.svg",
-                scrollBtn: "/static/images/slide_btn.svg",
+                bannerBg: "assets/images/bg_01.png",
+                siteLogo: "assets/images/logo.svg",
+                footerLogo: "assets/images/logo_white.svg",
+                scrollBtn: "assets/images/slide_btn.svg",
             },
             siteName: "不 想 │ 上 班",
             siteTitle: "I don't want to work",
