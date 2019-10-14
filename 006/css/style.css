@@ -9681,6 +9681,9 @@ img {
   body {
     width: 100%;
   }
+  #section-1 > .logo {
+    display: none;
+  }
 }
 
 @media (min-width: 1024px) and (max-width: 1279px) {
