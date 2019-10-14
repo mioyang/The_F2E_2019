@@ -7,8 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta property="og:title" content="2019 The F2E Challenge - 006.旅館預約服務">
     <meta property="og:description" content="一週挑戰一個修練主題，總計九週。">
-    <!-- Material Icons -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- font-awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" rel="stylesheet">
+    <!-- animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.css">
     <link rel="stylesheet" href="css/style.css">
     <title>2019 F2E Challenge-006.旅館預約服務</title>
 </head>
@@ -19,57 +21,83 @@
         <div class="row">
             <div class="col-12">
                 <div id="section-1" :class="flexCenter" :style="sectionMinheight">
-                    <div class="bg" :class="'showIn'"><img :src="headerSetion.headerImg.bannerBg" alt="" srcset="">
+                    <div class="bg" :class="'showIn'"><img :src="siteInfos.siteImgs.bannerBg" alt="" srcset="">
                     </div>
-                    <div class="title" :class="'position-absolute'" v-html="headerSetion.logoTxt"></div>
-                    <div class="logo" :class="'position-absolute'"><img :src="headerSetion.headerImg.siteLogo" alt=""
+                    <div class="title" :class="'position-absolute'">{{siteInfos.siteName}}</div>
+                    <div class="logo" :class="'position-absolute'"><img :src="siteInfos.siteImgs.siteLogo" alt=""
                             srcset="">
-                        {{headerSetion.siteTitle}}</div>
+                        {{siteInfos.siteTitle}}</div>
+                    <a class="scroll-btn animated infinite fadeOutDown" href="#" v-scroll-to="'#section-rooms'"><img
+                            :src="siteInfos.siteImgs.scrollBtn" alt=""></a>
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-12 section-title">Rooms</div>
-            <div class="col-xs-12 col-md-6 col-xl-4" v-for="item in rooms" :key="item.id">
-                <div class="room-list p-3 my-3" :class="'d-flex'">
-                    <h3 class="room-title">{{item.name}}</h3>
-                    <div class="card rounded-0">
-                        <div class="card-body">
-                            <figure class="room-thumb-img" :style="{ background: 'url('+ item.imageUrl +')' }">
-                                <figcaption></figcaption>
-                            </figure>
-                            <div class=" d-flex room-info">
-                                <div class="col-4">
-                                    <small>人數</small>
-                                    <p>1</p>
-                                </div>
-                                <div class="col-4">
-                                    <small>人數</small>
-                                    <p>1</p>
-                                </div>
-                                <div class="col-4">
-                                    <small>人數</small>
-                                    <p>18</p>
-                                </div>
+        <transition name="scrollDown">
+            <div id="section-rooms" class="row">
+                <div class="col-12 section-title">Rooms</div>
+                <card-rooms :room-lists="item" v-for="item in rooms" :key="item.id" v-if="item.imageUrl"></card-rooms>
+            </div>
+        </transition>
+        <footer-component :site-phone="siteInfos.sitePhone" :site-logo="siteInfos.siteImgs.footerLogo"
+            :site-ig="siteInfos.siteIg" :site-add="siteInfos.siteAdd">
+        </footer-component>
+    </div>
+
+    <!-- 房間列表 -->
+    <script type="text/x-template" id="cardElement">
+        <div class="col-xs-12 col-md-6 col-xl-4 d-flex justify-content-center">
+            <div class="room-list p-3 my-3" :class="'d-flex'">
+                <h3 class="room-title">{{roomLists.name}}</h3>
+                <div class="card rounded-0">
+                    <div class="card-body">
+                        <figure class="room-thumb-img" :style="{ background: 'url('+ roomLists.imageUrl +')' }">
+                            <figcaption></figcaption>
+                        </figure>
+                        <div class=" d-flex room-info">
+                            <div class="col-4">
+                                <small>人數</small>
+                                <p>1</p>
                             </div>
-                            <div class="room-amenities">wifi , 早餐 , 電話 , 空調 , 冰箱 , 禁止吸煙 , 可帶寵物</div>
-                            <div class="room-price">
-                                <div><span>假日</span><span class="h-price pr-0">${{item.holidayPrice}}</span></div>
-                                <div><span>平日</span><span class="n-price pr-0">${{item.normalDayPrice}}</span></div>
+                            <div class="col-4">
+                                <small>人數</small>
+                                <p>1</p>
                             </div>
+                            <div class="col-4">
+                                <small>人數</small>
+                                <p>18</p>
+                            </div>
+                        </div>
+                        <div class="room-amenities">wifi , 早餐 , 電話 , 空調 , 冰箱 , 禁止吸煙 , 可帶寵物</div>
+                        <div class="room-price">
+                            <div><span>假日</span><span class="h-price pr-0">${{roomLists.holidayPrice}}</span></div>
+                            <div><span>平日</span><span class="n-price pr-0">${{roomLists.normalDayPrice}}</span></div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </script>
+
 
     <!-- axios -->
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <!-- ScrollReveal.js -->
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="js/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue-scrollto"></script>
     <script src="js/all.js"></script>
+
+    <!-- <script>
+        $(function () {
+            $('.scroll-btn').on('click', function (e) {
+                e.preventDefault();
+                $('html, body').animate({
+                    scrollTop: $($(this).attr('href')).offset().top
+                }, 500, 'linear');
+            });
+        });
+    </script> -->
 </body>
 
 </html>
